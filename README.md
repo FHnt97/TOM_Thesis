@@ -1,5 +1,6 @@
 # TOM_Thesis
-Code for MSc Thesis - Bias in Operations Management Algorithms - Occupational Data
+Code for MSc Thesis:
+### Fairness-aware development of algorithms: An explanaotry study on bias in occupational stress& fatigue datasets.
 
 Add code was written through Google Collab, due to technical limitations. Helper funcitons are therefore saved in the notebook, rather than saving them separately and using the import function. 
 
