@@ -1,6 +1,10 @@
 # TOM_Thesis
 Code for MSc Thesis - Bias in Operations Management Algorithms - Occupational Data
 
+Add code was written through Google Collab, due to technical limitations. Helper funcitons are therefore saved in the notebook, rather than saving them separately and using the import function. 
+
+For future work, with the use of Jupyter Notebooks, this can be improved. 
+
 # Introduction
 In this notebook, we consider a scenario where algortihmic tools are used to detect stress patterns in an occupational setting.
 
