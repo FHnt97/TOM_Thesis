@@ -2,7 +2,7 @@
 Code for MSc Thesis:
 ### Fairness-aware development of algorithms: An explanaotry study on bias in occupational stress& fatigue datasets.
 
-Add code was written through Google Collab, due to technical limitations. Helper funcitons are therefore saved in the notebook, rather than saving them separately and using the import function. 
+All code was written through Google Collab, due to technical limitations. Helper funcitons are therefore saved in the notebook, rather than saving them separately and using the import function. 
 
 For future work, with the use of Jupyter Notebooks, this can be improved. 
 
