@@ -9,7 +9,7 @@ For future work, with the use of Jupyter Notebooks, this can be improved.
 # Introduction
 In this notebook, we consider a scenario where algortihmic tools are used to detect stress patterns in an occupational setting.
 
-We train diverse fairness-unaware algortihms on datasets on occupational stress and fatigue, with the aim to prove that there is a underlying bias in the methodology.
+We train diverse fairness-unaware algortihms on datasets on occupational stress and fatigue, with the aim to prove that there is a underlying bias in the methodology. Additionally, diverse bias mitigation techniques will be discussed, applied, and compared.
 
 The objective of the algorithms is to detect (classification algorithm) the state of the employee to better accomodate their working conditions and allow for more productive work.
 
@@ -71,3 +71,18 @@ https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Dete
 Dataset instances: 15 participants
 
 Data collection: refer to https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29
+
+# MMA & WLK Data
+The MMA& WLK datasets has been provided by -----, with the main use to detect and predict fatigue in employees doing manual material handling activities.
+
+The first present a simulated manual material handling (MMH) task, and the second is a supply pick-up and insertion (SI) task.
+
+Twenty four participants (9 females, 15 males; mean age 36.37 years with the standard deviation of 16.67 years) partook in the test. All participants reported that they were in good physical and mental health. Participants completed one three-hour experimental session for the simulated MMH task and another for the SI task. The order of the two experiments was randomized and participants had to complete the experiments in different days. As a result, we ended up with 15 participants whose data were deemed reliable for analysis.
+
+Note that the data has been cleaned, and the needed parameters for the model have been calculated by the owner of the dataset (sensor selection, data preprocessing and feature generation (HRR, jerk, etc)), and unchaged features have been removed.
+
+Fatigue is measured through HR and INN data.
+
+The age of participants will be rounded to the closest 10 years, in order to group participants into groups.
+
+The columns contain mostly boolean and categorical data (including age and various test results).
