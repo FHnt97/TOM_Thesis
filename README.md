@@ -56,7 +56,7 @@ The dataset consists of the following physiological signals (continuous variable
 
 Categorical variables available are:
 - gender & age
-- 
+
 The data was extracted from the raw data files through the code presented in the notebook: Data creation - WESAD.
 
 ON TOP: REDUCED REPRESENTATION OF THE UNPRIVILEDGED GROUP (less women in sample) - it is assumed that the sensitive/ biased attribues are knon apriori & can be adressed by removing these features from the learned representation. However, some features can correlate with age/ gender indirectly --> if this is not known, this bias cannot be removed.
