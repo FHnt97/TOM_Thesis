@@ -9,9 +9,9 @@ For future work, with the use of Jupyter Notebooks, this can be improved.
 # Introduction
 In this notebook, we consider a scenario where algortihmic tools are used to detect stress patterns in an occupational setting.
 
-We train diverse fairness-unaware algortihms on datasets on occupational stress and fatigue, with the aim to prove that there is a underlying bias in the methodology. Additionally, diverse bias mitigation techniques will be discussed, applied, and compared.
+We train diverse fairness-unaware algortihms on two datasets containing information on occupational stress and fatigue, with the aim to prove that there is a underlying bias when applying these ML models. Additionally, diverse bias mitigation techniques will be discussed, applied, and compared.
 
-The objective of the algorithms is to detect (classification algorithm) the state of the employee to better accomodate their working conditions and allow for more productive work.
+The objective of the algorithms used is to detect (classification algorithm) the state of the employee to better accomodate their working conditions and allow for more productive work.
 
 # Fairness in the context of Operatiosn Management
 Fairness is complex & contextual, there is no one-size fits all appraoch.
@@ -42,8 +42,18 @@ We also have to consider the taxonomy of possible bias sources:
 - Interpretation bias - correlation falacy (correlation =! causation); overgeneralization, automation bias
 
 
-In practice, these questions should be covered through the creation of a model card.
+In practice, these questions should be covered through the creation of a model card. They will also be covered in the companion report to the repository. 
 
+# Methodology:
+
+For each dataset, the experimental design is split into four stages:
+1. An exploratory analysis of the data, to understand the realtionship between the sensitve attributes (age & gender) and other attributes.
+2. The set up of three ml models (RandomForest/k-NN, LogReg, SVM) for the detection of stress/fatigue, followed by an analysis of the performance metric.
+3. Fairness metrics for each model in regards to False Negative Rate and Equal Opportunity in regards to the age & gender.
+4. Implementation of pre-processing (reweighing) and post-processing bais mitigation methods & comparison of effectiveness.
+
+For further discussion, a convoluted nn has been set up, to detect stress on an individual level for the WESAD dataset. After the set up of the code, we analysed the results for bias. 
+As a next step to the research, we propose applying some of the most commonly used mitigation methods on this ML model (CFAIR, etc.) & comparing results to understand if group fairness can be improved. 
 
 # The Datasets:
 ## WESAD
