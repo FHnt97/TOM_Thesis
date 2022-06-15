@@ -49,7 +49,7 @@ In practice, these questions should be covered through the creation of a model c
 For each dataset, the experimental design is split into four stages:
 1. An exploratory analysis of the data, to understand the realtionship between the sensitve attributes (age & gender) and other attributes.
 2. The set up of three ml models (RandomForest/k-NN, LogReg, SVM) for the detection of stress/fatigue, followed by an analysis of the performance metric.
-3. Fairness metrics for each model in regards to False Negative Rate and Equal Opportunity in regards to the age & gender.
+3. Fairness metrics for each model in regards to False Negative Rate and Equalized Odds regards to the age & gender.
 4. Implementation of pre-processing (reweighing) and post-processing bais mitigation methods & comparison of effectiveness.
 
 For further discussion, a convoluted nn has been set up, to detect stress on an individual level for the WESAD dataset. After the set up of the code, we analysed the results for bias. 
