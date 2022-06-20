@@ -33,14 +33,7 @@ Furthermore, when creating general codes for people, it is important to consider
 - Who can monitor the outcome and how? Is the model transparent & has it been well documented?
 
 - Does the outcome have a discriminatory impact? And, if so, how can the negative impact be rectified?
-
-We also have to consider the taxonomy of possible sources of bias:
-
-- Selection bias, reporting bias, sampling bias
-- Interpretation bias - correlation fallacy (correlation =! causation); overgeneralization, automation bias
-
-
-In practice, these questions should be covered through the creation of a model card. They will also be covered in the companion report to the repository. 
+ 
 
 # Methodology:
 
