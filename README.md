@@ -1,8 +1,15 @@
-# TOM_Thesis
-Code for MSc Thesis:
-### Fairness-aware development of algorithms: An exploratory study on bias in occupational stress& fatigue datasets.
+# Fair AI in workspaces: an exploratory study on data-driven occupational stress and fatigue understanding
 
-All code was written through Google Collab due to technical limitations. Helper functions are therefore saved in the notebook, rather than saving them separately and using the import function. For future work, with the use of Jupyter Notebooks, this can be improved. 
+Master Thesis
+Faculty of Economics and Business
+MSc. Technology and Operations Management
+
+> **NOTE** - 
+All code was written through Google Collab due to technical limitations. 
+Helper functions are therefore saved in the notebook, rather than saving them separately and using the import function. 
+Additionally, due to time limitations, the graphics for the results where done using excel, using copy past - an improvement will be to extract results into dataframes and save as csv. 
+
+For future work, with the use of Jupyter Notebooks, this can be improved. 
 
 # Introduction
 In this notebook, we consider a scenario where algorithmic tools are used to detect stress patterns in an occupational setting.
@@ -12,28 +19,21 @@ We train diverse fairness-unaware algorithms on two datasets containing informat
 The objective of the algorithms used is to detect (classification algorithm) the state of the employee to better accommodate their working conditions and allow for more productive work.
 
 # Fairness in the context of Operations Management
-Fairness is complex & contextual; there is no one-size-fits-all approach.
+Machine learning algorithms are increasingly used for diverse decision-making processes. Consequently, the impact of algorithmic decisions on people’s lives, and with it, the effect of unintended biases in algorithms, has increased. These give rise to undue discrimination and inequalities between separate groups, leading to social, ethical, and legal issues. Therefore, data bias must be considered, especially in fields involving data use on human beings. 
 
-For Operations Management, practitioners often have to make cost/benefit decisions, facing the problem of accuracy vs. fairness, as well as the question of whether models should be made on a general or personal level.
+Especially in the field of Operations Management (OM), and specifically in the study of Human-Robot Interaction and Collaboration, bias is not a topic that is often discussed when building ML models. It is, however, cruicial for the health and safety of employees, that models used in application such as performance-based fatigue and stress detection systems perfrom equally for all, to avoid the safety and realth risks invovled with these factors. 
+
+> The managing fatigue and stress is important in OM, as they can lead to reduced performance, quality of work and productivity, alongside increased risk of human errors and labour accidents. It is widely recognised that work-related stress and fatigue can be predecessors to many detrimental short-term and long-term health  outcomes. As stated by Maman et al. in their work “[…] the health-related lost productivity time for fatigued workers exceeds double their non-fatigued counterparts. The financial ramifi-cations of fatigue outcomes are estimated to cost U.S. employers approximately $136 billion annually”. This highlights the importance of evading stress and fatigue equally for all employees, independently of how they are categorized, in the occupational setting. 
+
+Additionally, in Operations Management, practitioners often have to make cost/benefit decisions, facing the problem of accuracy vs. fairness, as well as the question of whether models should be made on a general or personal level. This is an essential question as personalised models are significantly more expensive to set up, and general models that work with person-specific data can have underlying biases.
+
+Specifically for the deployment of performance-based fatigue and stress detection systems in the field of Opera-tions Management, an unfair model can lead to reduced performance, quality of work and productivity, alongside increased risk of human errors and labour accidents.
 
 The question therefore arises:
 
-- Can we create generalised models (vs personalised ones) that are fair towards all groups present in the field/ that don't discriminate against minority groups?
-
-This is an essential question as personalised models are significantly more expensive to set up, and general models that work with person-specific data can have underlying biases.
-
-Furthermore, when creating general codes for people, it is important to consider:
-
-- Who will the product empower/service, and who will be left out? The objectives have to be clear
-
-- Who is writing the code & is the team/ person aware of diverse and inclusive practices
-
-- Whose data is included in the process, and how this is collected. Topics to consider include: - historical patterns, consent, privacy, exclusion of specific groups, etc.
-
-- Who can monitor the outcome and how? Is the model transparent & has it been well documented?
-
-- Does the outcome have a discriminatory impact? And, if so, how can the negative impact be rectified?
- 
+- Do datasets on occupational stress and fatigue contain significant bias originating from sensitive attributes? 
+- Would improved fainress allow practitioners to create generalised models (vs personalised ones) that are fair towards all groups present in the field/ that don't discriminate against minority groups?
+- What state-of-the-art methodologies proposed by the research community are adequate to debias a model used to detect the levels of stress in employees?
 
 # Methodology:
 
@@ -48,7 +48,9 @@ As a next step in the research, we propose applying some of the most commonly us
 
 # The Datasets:
 ## WESAD
-WESAD is a publicly available multimodal physiological dataset for wearable stress and affects detection. The signals were recorded during a lab study in which 15 participants with a mean age of 27.5 years (SD = 2.4) were exposed in three different affective states: neutral, stress, and amusement. 
+This  dataset is a publicly available multimodal physiological dataset for wearable stress and affects detection created in 2018 through a corporate research project by Robert Bosch. Physiological signals were recorded during a laboratory study in which 15 participants were exposed to three different affective states: neutral, stress, and amusement. The records on amusement have been disregarded for this study, leaving, on average, 66 entries per participant. 
+The dataset was created in 2018 by Schmidt et al., with the primary objective to fill the gap for commonly used standard datasets for wearable stress detection, and incorporate multiple affective states into the study of occupational stress. In the initial paper published on the dataset, the researchers propose common machine learning methods, ranging from Decision Trees (DT) to Random Forest (RF), Ada Boost (AB), to k-Nearest Neighbour (k-NN) with k=9. All proposed models have additionally been evaluated for their cross-validation (CV) score .
+
 
 The dataset consists of the following physiological signals (continuous variables):
 
@@ -63,27 +65,27 @@ The dataset consists of the following physiological signals (continuous variable
 Categorical variables available are:
 - gender & age
 
-The data was extracted from the raw data files through the code presented in the notebook: Data creation - WESAD.
+The data was extracted from the raw data files through the code presented in the notebook: Data creation - WESAD, found in the code folder.
 
-ON TOP: REDUCED REPRESENTATION OF THE UNPRIVILEDGED GROUP (fewer women in sample) - it is assumed that the sensitive/ biased attributes are known apriori & can be adressed by removing these features from the learned representation. However, some features can correlate with age/ gender indirectly --> if this is not known, this bias cannot be removed.
+**SOURCE:**
 
-https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29
+[https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29](https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29)
 
-Dataset instances: 15 participants
-
-Data collection: refer to https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29
 
 # MMA & WLK Data
-The MMA& WLK datasets have been provided by -----, with the primary use to detect and predict fatigue in employees doing manual material handling activities.
+These datasets have been provided by a research consortium from the Adelphi University, Auburn University and the University of Buffalo. The primary use of the data is to detect and predict fatigue in employees doing manual material handling activities, simulating manufacturing tasks. The first of the datasets presents a simulated manual material handling (MMH) task, the second (WLK) entails information on a supply pick-up and insertion (SI) task. Overall, the dataset contains information on 28 participants, with 18 entries on average per subject. The publicly available dataset for this research has been cleaned, parameters calculat-ed, and outliers removed prior to the upload. The raw data is not available. 
 
-The first present a simulated manual material handling (MMH) task, and the second is a supply pick-up and insertion (SI) task.
+The authors of the original research paper, written by Maman et al. [26] use RF classifiers (n esti-mators = 100), logistic regression (solver = “newton-cg”, C = 1,000,000), and a Support-Vector-Machine (SVM) model (kernel= “rbf”, C = 64, class weight = “balanced”) for the classification task.
 
-Twenty-four participants (9 females, 15 males; mean age 36.37 years with the standard deviation of 16.67 years) partook in the test. All participants reported that they were in good physical and mental health. Participants completed one three-hour experimental session for the simulated MMH task and another for the SI task. The order of the two experiments was randomised and participants had to complete the experiments in different days. As a result, we ended up with 15 participants whose data were deemed reliable for analysis.
-
-Note that the data has been cleaned, and the needed parameters for the model have been calculated by the owner of the dataset (sensor selection, data preprocessing and feature generation (HRR, jerk, etc.)), and unchanged features have been removed.
+For this experiment, and contrary to the proposed research from the original author, the MMH and WLK datasets have been merged to analyse whether a second, non-human attribute “task” could be consid-ered a sensitive attribute. 
 
 Fatigue is measured through HR and INN data.
 
 The age of participants will be rounded to the closest 10 years in order to group participants into groups.
 
 The columns contain mainly boolean and categorical data (including age and various test results).
+
+**SOURCE:**
+
+[https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29
+](https://zahrame.github.io/FatigueManagement.github.io/)
