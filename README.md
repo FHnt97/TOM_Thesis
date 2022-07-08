@@ -7,11 +7,11 @@ MSc. Technology and Operations Management
 > **NOTE** - 
 All code was written through Google Collab due to technical limitations. <br />
 Helper functions are therefore saved in the notebook, rather than saving them separately and using the import function. <br />
-Additionally, due to time limitations, the graphics for the results were done using Excel, using copy past - an improvement will be to extract results into dataframes and save as csv. <br /> 
+Additionally, due to time limitations, the graphics for the results were done using Excel, using copy paste - an improvement will be to extract results into dataframes and save as csv. <br /> 
 For future work, with the use of Jupyter Notebooks, this can be improved. 
 
 # Introduction
-In this notebook, we consider a scenario where algorithmic tools are used to detect stress patterns in an occupational setting.
+In this notebook, we consider a scenario where ML tools are used to detect stress and fatigue patterns in an occupational setting.
 <br /><br />
 We train diverse fairness-unaware algorithms on two datasets containing information on occupational stress and fatigue, with the aim to prove that there is an underlying bias when applying these ML models. Additionally, diverse bias mitigation techniques will be discussed, applied, and compared.
 <br /><br />
