@@ -1,4 +1,4 @@
-# Fair AI in workspaces: an exploratory study on data-driven occupational stress and fatigue understanding
+# Fair AI in workspaces: an exploratory study on data-driven occupational stress and fatigue detection systems
 
 Master Thesis
 Faculty of Economics and Business
